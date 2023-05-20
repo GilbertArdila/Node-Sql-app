@@ -17,7 +17,7 @@ class AssetsService {
      });
      return assets;
   }
-  //find by Depreciado
+  
   async findByState(){
     const assets = await models.Asset.findAll({
       where:{
@@ -28,7 +28,7 @@ class AssetsService {
     });
     return assets;
   }
-  //find by quantity
+  
   async findByQuantity(){
     const assets = await models.Asset.findAll({
       where:{
