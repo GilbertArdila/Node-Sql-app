@@ -2,7 +2,6 @@ const { config } = require('../config/config');
 
 const USER = encodeURIComponent(config.dbUser);
 const PASSWORD = encodeURIComponent(config.dbPassword);
-//const URI = `postgres://admin:admin123@localhost:5432/activos`;
 const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
 
 module.exports = {
