@@ -20,6 +20,24 @@ router.get('/', async (req, res, next) => {
     next(error);
   }
 });
+//find by state != Activo
+router.get('/estado', async (req, res, next) => {
+  try {
+    const assets =await service.findByState();
+    res.status(200).json(assets);
+  } catch (error) {
+    next(error);
+  }
+});
+//find by quantity > 0
+router.get('/cantidad', async (req, res, next) => {
+  try {
+    const assets =await service.findByQuantity();
+    res.status(200).json(assets);
+  } catch (error) {
+    next(error);
+  }
+});
 
 router.get(
   '/:id',
@@ -34,6 +52,7 @@ router.get(
     }
   }
 );
+
 
 router.post(
   '/',

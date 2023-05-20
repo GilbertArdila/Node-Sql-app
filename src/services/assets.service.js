@@ -1,4 +1,5 @@
 const boom = require('@hapi/boom');
+const { Op } = require("sequelize");
 
 const { models } = require('../libs/sequelize');
 
@@ -16,7 +17,28 @@ class AssetsService {
      });
      return assets;
   }
-
+  //find by Depreciado
+  async findByState(){
+    const assets = await models.Asset.findAll({
+      where:{
+        state:{
+          [Op.not]:'Activo'
+        }
+      }
+    });
+    return assets;
+  }
+  //find by quantity
+  async findByQuantity(){
+    const assets = await models.Asset.findAll({
+      where:{
+        quantity:{
+          [Op.gt]:0
+        }
+      }
+    });
+    return assets;
+  }
   async findOne(id) {
     const asset = await models.Asset.findByPk(id);
     if (!asset) {
