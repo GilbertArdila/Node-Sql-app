@@ -1,6 +1,6 @@
 const express = require('express');
-const UbicationsService = require('../services/ubications.service');
 
+const UbicationsService = require('../services/ubications.service');
 const router = express.Router();
 const service = new UbicationsService();
 
