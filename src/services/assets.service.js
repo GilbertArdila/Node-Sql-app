@@ -11,7 +11,9 @@ class AssetsService {
   }
 
   async find() {
-     const assets = await models.Asset.findAll();
+     const assets = await models.Asset.findAll({
+      include:['employee']
+     });
      return assets;
   }
 

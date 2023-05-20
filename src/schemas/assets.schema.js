@@ -7,6 +7,7 @@ const quantity = Joi.number().min(1);
 const ubication = Joi.string();
 const purchaseDate = Joi.date();
 const state = Joi.string();
+const employeeId = Joi.string();
 
 const getAssetSchema = Joi.object({
   id: id.required(),
@@ -28,5 +29,6 @@ const updateAssetSchema = Joi.object({
   ubication: ubication,
   purchaseDate: purchaseDate,
   state: state,
+  employeeId:employeeId
 });
 module.exports = { createAssetSchema, updateAssetSchema, getAssetSchema };

@@ -34,7 +34,7 @@ const UbicationSchema = {
 }
 
 class Ubication extends Model{
-  //defining relationships
+  //defining relationships,
   static associate(){
 
   }

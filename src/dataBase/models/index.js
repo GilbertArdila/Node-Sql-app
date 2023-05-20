@@ -6,6 +6,8 @@ function setupModels(sequelize){
   Asset.init(AssetSchema,Asset.config(sequelize));
   Employee.init(EmployeeSchema,Employee.config(sequelize));
   Ubication.init(UbicationSchema,Ubication.config(sequelize));
+  //sending models to associate
+  Asset.associate(sequelize.models);
 }
 
 module.exports = setupModels;
