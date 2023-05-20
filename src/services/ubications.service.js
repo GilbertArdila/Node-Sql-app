@@ -1,6 +1,4 @@
 const boom = require('@hapi/boom');
-
-//this models was created by default in libs/sequelize
 const { models } = require('../libs/sequelize');
 
 class UbicationsService {
