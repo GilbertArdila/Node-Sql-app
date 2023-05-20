@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const {errorHandler,boomErrorHandler,ormErrorHandler} = require('./src/middlewares/error.handler');
 
 const routerApi = require('./src/routes');
 const app = express();
@@ -22,6 +23,10 @@ const options = {
 app.use(cors(options));
 
 routerApi(app);
+//using meddlewares
+app.use(ormErrorHandler);
+app.use(boomErrorHandler);
+app.use(errorHandler);
 
 app.listen(port, ()=>{
 
