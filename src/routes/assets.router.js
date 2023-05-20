@@ -1,7 +1,6 @@
 const express = require('express');
 
 const AssetsService = require('../services/assets.service');
-//to validate schemas
 const validatorHandler = require('../middlewares/validator.handler');
 const {
   createAssetSchema,
@@ -20,6 +19,7 @@ router.get('/', async (req, res, next) => {
     next(error);
   }
 });
+
 //find by state != Activo
 router.get('/estado', async (req, res, next) => {
   try {
@@ -29,6 +29,7 @@ router.get('/estado', async (req, res, next) => {
     next(error);
   }
 });
+
 //find by quantity > 0
 router.get('/cantidad', async (req, res, next) => {
   try {
@@ -52,7 +53,6 @@ router.get(
     }
   }
 );
-
 
 router.post(
   '/',
