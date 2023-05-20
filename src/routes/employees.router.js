@@ -1,6 +1,6 @@
 const express = require('express');
-const EmployeeService = require('../services/employees.service');
 
+const EmployeeService = require('../services/employees.service');
 const router = express.Router();
 const service = new EmployeeService();
 
